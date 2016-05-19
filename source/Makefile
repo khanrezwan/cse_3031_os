@@ -1,7 +1,7 @@
 OBJECTS=loader.o kmain.o
 CC=gcc
 #CFLAGS=-m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c -ggdb
-CFLAGS=-m32 -std=gnu99 -ffreestanding -Wall -Wextra -Werror -c -ggdb
+CFLAGS=-m32 -std=gnu99 -ffreestanding -Wall -Wextra -Werror -I./include -c -ggdb
 LDFLAGS=-Tlink.ld -melf_i386
 AS=nasm
 ASFLAGS=-felf -Fdwarf -g
