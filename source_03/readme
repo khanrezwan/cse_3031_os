@@ -1,0 +1,7 @@
+printf and frame buffer
+to run :
+make clean all os.iso run
+
+another terminal cd to this directory
+
+ddd kernel --eval-command="target remote localhost:26000"
