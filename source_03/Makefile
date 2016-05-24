@@ -1,4 +1,4 @@
-OBJECTS=loader.o kmain.o string.o common.o framebuffer.o
+OBJECTS=loader.o kmain.o
 CC=gcc
 #CFLAGS=-m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c -ggdb
 CFLAGS=-m32 -std=gnu99 -ffreestanding -Wall -Wextra -Werror -I./include -c -ggdb
@@ -13,6 +13,7 @@ kernel.elf: $(OBJECTS)
 
 os.iso: kernel.elf
 	cp kernel.elf iso/boot/kernel.elf
+	cp stage2_eltorito iso/boot/grub/stage2_eltorito
 	genisoimage -R -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -A os -input-charset utf8 -quiet -boot-info-table -o os.iso iso
 
 run: os.iso
