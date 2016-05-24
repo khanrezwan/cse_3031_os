@@ -7,7 +7,7 @@ global _start
   arg2 equ 2
   arg3 equ 3
   
-  section .text:
+  section .text
     _start:
     push arg3
   push  arg2
